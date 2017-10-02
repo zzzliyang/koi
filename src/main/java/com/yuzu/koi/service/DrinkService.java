@@ -4,8 +4,8 @@ import com.yuzu.koi.data.Customer;
 import com.yuzu.koi.data.Drink;
 import com.yuzu.koi.data.DrinkOrder;
 import com.yuzu.koi.persistence.CustomerRepository;
-import com.yuzu.koi.persistence.DrinkRepository;
 import com.yuzu.koi.persistence.DrinkOrderRepository;
+import com.yuzu.koi.persistence.DrinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

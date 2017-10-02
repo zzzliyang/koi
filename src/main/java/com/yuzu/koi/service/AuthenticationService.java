@@ -1,6 +1,5 @@
 package com.yuzu.koi.service;
 
-import com.microsoft.aad.adal4j.UserInfo;
 import com.yuzu.koi.data.User;
 import com.yuzu.koi.data.UserRole;
 import com.yuzu.koi.persistence.UserRepository;

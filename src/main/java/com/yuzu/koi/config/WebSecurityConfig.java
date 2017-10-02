@@ -16,14 +16,11 @@ import javax.sql.DataSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private DataSource dataSource;
-
-    @Autowired
     private AuthenticationService authenticationService;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        /*http.authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
                 .antMatchers("/hello").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
@@ -33,23 +30,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
             .logout().logoutUrl("/logout")
-                .permitAll();
+                .permitAll();*/
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-       /* auth
-		.jdbcAuthentication()
-			.dataSource(dataSource)
-            .usersByUsernameQuery("select username, password, enabled from users where username=?")
-            .authoritiesByUsernameQuery("SELECT u.username as username,\n" +
-                    "       r.role as role\n" +
-                    "FROM users u\n" +
-                    "INNER JOIN user_roles ur\n" +
-                    "    ON u.id = ur.user_id\n" +
-                    "INNER JOIN roles r\n" +
-                    "    ON ur.role_id = r.id\n" +
-                    "WHERE u.username = ?");*/
         auth.userDetailsService(authenticationService);
     }
 
