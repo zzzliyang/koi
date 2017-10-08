@@ -2,10 +2,10 @@
   <div id="app">
     <koi-header class="bg-purple-dark"></koi-header>
     <el-row class='container'>
-      <el-col :span="4" class="menu">
+      <el-col :span="8" class="menu">
         <koi-sidebar class="bg-purple"></koi-sidebar>
       </el-col>
-      <el-col :span="20" class="content">
+      <el-col :span="12" class="content">
         <koi-table class="bg-purple-dark"></koi-table>
       </el-col>
     </el-row>
