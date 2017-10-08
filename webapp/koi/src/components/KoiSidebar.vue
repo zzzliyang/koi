@@ -1,7 +1,7 @@
 <template>
   <div>
     <h5>Now picking item {{ msg }}</h5>
-    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+    <el-menu default-active="2" class="el-menu-vertical-demo" @select="handleSelect" @open="handleOpen" @close="handleClose">
       <el-submenu index="1">
         <template slot="title"><i class="el-icon-message"></i>Navigator One</template>
         <el-menu-item-group title="Group One">
@@ -31,11 +31,15 @@
         }
       },
       methods: {
+        handleSelect(key, keyPath) {
+          this.msg = key
+          this.$store.commit('menuChange', key)
+        },
         handleOpen(key, keyPath) {
-          this.msg = key;
+
         },
         handleClose(key, keyPath) {
-          this.msg = '';
+
         },
       }
     }

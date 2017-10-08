@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <p>this is {{ msg }}</p>
   </div>
 </template>
@@ -7,9 +7,9 @@
 <script>
     export default {
       name: 'koi-header',
-      data () {
-        return {
-          msg: 'header'
+      computed: {
+        msg: function() {
+          return this.$store.getters.header
         }
       }
     }
